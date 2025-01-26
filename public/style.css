@@ -1,0 +1,606 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: #a050ff;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1b1b1f;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #a050ff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #a050ff;
+}
+
+.nav-links .active {
+  color: #a050ff;
+  font-weight: bold;
+}
+
+.nav-buttons button {
+  background: transparent;
+  color: #a050ff;
+  border: 1px solid #a050ff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background: #a050ff;
+  color: #121212;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('images/backgroundsite.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.search-bar select, .search-bar input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: #1b1b1f;
+  color: white;
+}
+
+.search-bar button {
+  padding: 0.8rem 1.2rem;
+  background-color: #a050ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #9226e6;
+}
+
+/* Categories Section */
+.categories {
+  padding: 3rem 2rem;
+  background: #1b1b1f;
+  text-align: center;
+}
+
+.categories h2 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-overlay {
+  transform: translateY(-10px);
+}
+
+/* Call-to-Action Section */
+.call-to-action {
+  background: #a050ff;
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+
+.call-to-action h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.call-to-action p {
+  margin-bottom: 1.5rem;
+}
+
+.call-to-action .cta-btn {
+  padding: 0.8rem 2rem;
+  background: white;
+  color: #a050ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.call-to-action .cta-btn:hover {
+  background: #9226e6;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background: #1b1b1f;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+footer .social-icons {
+  margin-top: 1rem;
+}
+
+footer .social-icons a {
+  color: #a050ff;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #9226e6;
+}
+
+/* Results */
+.results ul {
+  list-style: none;
+  padding: 0;
+}
+
+.results ul li {
+  background-color: #1b1b1f;
+  color: #ffffff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+}
+/* Search and Filter Section */
+.search-section {
+  padding: 3rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  color: white;
+}
+
+.search-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  color: #a050ff;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-bar, .filter-bar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-bar input, .filter-bar select {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: #1b1b1f;
+  color: white;
+}
+
+.search-bar button, .filter-bar button {
+  padding: 0.8rem 1.2rem;
+  background-color: #a050ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-bar button:hover, .filter-bar button:hover {
+  background-color: #9226e6;
+}
+
+/* Movies Section */
+.movies-section {
+  padding: 3rem 2rem;
+  background-image: url('images/movies.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.movies-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Subtle overlay for better readability */
+  z-index: 1;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.movie-card {
+  background: #1b1b1f;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 1rem;
+  color: white;
+}/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1b1b1f;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #a050ff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a.active {
+  color: #a050ff;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+/* Featured Section */
+.featured {
+  padding: 3rem 2rem;
+  background-color: #1b1b1f;
+}
+
+.featured h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  gap: 1.5rem;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+}
+
+.album {
+  min-width: 200px;
+  text-align: center;
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.album img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1b1b1f;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+.carousel-button.left {
+  left: 10px;
+}
+
+.carousel-button.right {
+  right: 10px;
+}
+
+/* Playlists Section */
+.playlists {
+  padding: 3rem 2rem;
+  background-color: #121212;
+}
+
+.playlists h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.playlist {
+  text-align: center;
+  background: #1f1f1f;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.playlist img {
+  width: 100%;
+  display: block;
+  border-radius: 10px 10px 0 0;
+}
+
+.playlist h3 {
+  margin: 1rem 0;
+  color: #a050ff;
+}
+
+/* Footer */
+footer {
+  background: #1b1b1f;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer .social-icons a {
+  color: #a050ff;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.book-card {
+  background-color: #1b1b1f;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+.book-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.book-info {
+  padding: 1rem;
+  text-align: center;
+}
+.book-info h3 {
+  margin: 0.5rem 0;
+  color: #a050ff;
+}
+.book-info p {
+  margin: 0.2rem 0;
+}
+.no-results {
+  text-align: center;
+  color: #a050ff;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.game-card {
+  background-color: #1b1b1f;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+.game-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.game-info {
+  padding: 1rem;
+  text-align: center;
+}
+.game-info h3 {
+  margin: 0.5rem 0;
+  color: #a050ff;
+}
+.game-info p {
+  margin: 0.2rem 0;
+}
+.no-results {
+  text-align: center;
+  color: #a050ff;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}

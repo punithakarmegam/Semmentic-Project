@@ -1,0 +1,162 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('images/personnages.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  h1, h2 {
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #a050ff;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar .logo a {
+    text-decoration: none;
+    color: #a050ff;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #a050ff;
+  }
+  
+  /* Form Container */
+  .form-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .form-content {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+  }
+  
+  .form-content h1 {
+    margin-bottom: 1rem;
+    color: #a050ff;
+    font-size: 2rem;
+  }
+  
+  .form-content p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #b3b3b3;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #b3b3b3;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background: #1b1b1f;
+    color: #ffffff;
+    font-size: 1rem;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border: 2px solid #a050ff;
+  }
+  
+  .submit-btn {
+    padding: 0.8rem;
+    background: #a050ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background: #9226e6;
+  }
+  
+  .form-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .form-footer a {
+    color: #a050ff;
+    text-decoration: none;
+  }
+  
+  .form-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 0.9rem;
+  }
+  

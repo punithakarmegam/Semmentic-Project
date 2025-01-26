@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - InfinityPlay</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body class="signup-page">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">InfinityPlay</a></div>
+    <ul class="nav-links">
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="book.html">Books</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="music.html">Music</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sign Up Section -->
+  <section class="signup-section">
+    <div class="form-container">
+      <h1>Create Your Account</h1>
+      <p>Join InfinityPlay and start discovering your favorite content</p>
+      <form class="signup-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 InfinityPlay. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+  <script>
+    // Fonction pour gérer l'envoi du formulaire
+    document.querySelector('.signup-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Empêche l'envoi par défaut du formulaire
+  
+      // Afficher une popup de confirmation
+      alert('Signup Successful! Redirecting to Home...');
+  
+      // Rediriger vers la page d'accueil
+      window.location.href = 'index.html';
+    });
+  </script>
+  
+</body>
+</html>

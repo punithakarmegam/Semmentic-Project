@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cross-Media Exploration - InfinityPlay</title>
+  <link rel="stylesheet" href="crossmedia.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">InfinityPlay</a></div>
+    <ul class="nav-links">
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="book.html">Books</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="crossmedia.html">Cross-Media</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="crossmedia-hero" style="background-image: url('images/wallpaper.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Cross-Media Exploration</h1>
+      <p>Discover interconnected content across movies, books, games, and music tailored to your interests.</p>
+    </div>
+  </header>
+
+  <!-- Content Exploration Section -->
+  <section class="exploration">
+    <h2>Explore Related Content</h2>
+    <div class="exploration-controls">
+      <label for="genreSelect" class="genre-label">Select a Genre</label>
+      <select id="genreSelect">
+        <option value="">Select a Genre</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Action">Action</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Drama">Drama</option>
+        <option value="Fantasy">Fantasy</option>
+      </select>
+      <button id="exploreButton">Explore</button>
+    </div>
+    <div id="exploration-results" class="exploration-results hidden">
+      <h3>Results for <span id="selectedGenre">"All Genres"</span></h3>
+      <div class="results-grid">
+        <div class="result-item">
+          <img src="images/interstellar.jpeg" alt="Sci-Fi Movie">
+          <h4>Movie: Interstellar</h4>
+          <p>A sci-fi journey beyond our galaxy.</p>
+        </div>
+        <div class="result-item">
+          <img src="images/dune.jpg" alt="Sci-Fi Book">
+          <h4>Book: Dune</h4>
+          <p>A masterpiece of sci-fi literature.</p>
+        </div>
+        <div class="result-item">
+          <img src="images/mass.jpeg" alt="Sci-Fi Game">
+          <h4>Game: Mass Effect</h4>
+          <p>An epic sci-fi RPG adventure.</p>
+        </div>
+        <div class="result-item">
+          <img src="images/sound.jpg" alt="Sci-Fi Music">
+          <h4>Music: Sci-Fi Soundscapes</h4>
+          <p>Immersive tracks inspired by the cosmos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 InfinityPlay. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('exploreButton').addEventListener('click', () => {
+      const genre = document.getElementById('genreSelect').value;
+      const resultsSection = document.getElementById('exploration-results');
+      const selectedGenre = document.getElementById('selectedGenre');
+
+      if (genre === "Sci-Fi") {
+        selectedGenre.textContent = `"Sci-Fi"`;
+        resultsSection.classList.remove('hidden');
+      } else {
+        selectedGenre.textContent = `"${genre}"`;
+        resultsSection.classList.add('hidden');
+        alert("No results available for this genre. Please select Sci-Fi to view related content.");
+      }
+    });
+  </script>
+
+</body>
+</html>

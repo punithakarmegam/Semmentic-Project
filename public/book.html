@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfinityPlay - Books Collection</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="books">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">InfinityPlay</a></div>
+    <ul class="nav-links">
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="book.html" class="active">Books</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="crossmedia.html">Cross-Media</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Books Collection</h1>
+      <p>Discover Your Next Favorite Read</p>
+    </div>
+  </header>
+
+    <!-- Recommendations Section -->
+    <section id="recommendationsSection" class="recommendations-section">
+      <h2>Recommended Fantasy books</h2>
+      <div class="game-grid" >
+        <div class="game-card">
+          <span class="badge">Fantasy</span>
+          <img src="images/rings.jpg" alt="rings">
+          <div class="game-info">
+            <h3>The Lord of the Rings</h3>
+            <p>Genre: Fantasy</p>
+            <p>Author: J.R.R. Tolkien</p>
+          </div>
+        </div>
+        <div class="game-card">
+          <span class="badge">Fantasy</span>
+          <img src="images/potter.jpg" alt="Potter">
+          <div class="game-info">
+            <h3>Harry Potter and the Philosopher's Stone</h3>
+            <p>Genre: Fantasy</p>
+            <p>Author: J.K. Rowling</p>
+          </div>
+        </div>
+        <div class="game-card">
+          <span class="badge">Fantasy</span>
+          <img src="images/winter.jpg" alt="winter">
+          <div class="game-info">
+            <h3>A Winter’s Promise (The Mirror Visitor Quartet)</h3>
+            <p>Genre: Fantasy</p>
+            <p>Author: Christelle Dabos</p>
+          </div>
+        </div>
+        <div class="game-card">
+          <span class="badge">Fantasy</span>
+          <img src="images/assassin.jpg" alt="catcher">
+          <div class="game-info">
+            <h3>Assassin’s Apprentice (The Farseer Trilogy)</h3>
+            <p>Genre: Fantasy</p>
+            <p>Author: Robin Hobb</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+  <!-- Search and Filter Section -->
+  <section id="searchSection" class="search-section">
+    <h2>Search and Filter Books</h2>
+    <div class="search-container">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for a book...">
+        <button id="searchButton">Search</button>
+      </div>
+      <div class="filter-bar">
+        <select id="genreSelect">
+          <option value="" selected>All Genres</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Non-Fiction">Non-Fiction</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Science Fiction">Science Fiction</option>
+        </select>
+        <button id="filterButton">Filter</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books Section -->
+  <section id="booksSection" class="books-section">
+    <h2>Available Books</h2>
+    <div id="bookGrid" class="book-grid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 InfinityPlay. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const bookGrid = document.getElementById('bookGrid');
+      const searchInput = document.getElementById('searchInput');
+      const searchButton = document.getElementById('searchButton');
+      const genreSelect = document.getElementById('genreSelect');
+      const filterButton = document.getElementById('filterButton');
+
+      const booksData = [
+        { name: "To Kill a Mockingbird", genre: "Fiction", author: "Harper Lee", year: "1960", cover: "images/mockingbird.jpg" },
+        { name: "1984", genre: "Science Fiction", author: "George Orwell", year: "1949", cover: "images/1984.jpg" },
+        { name: "The Lord of the Rings", genre: "Fantasy", author: "J.R.R. Tolkien", year: "1954", cover: "images/rings.jpg" },
+        { name: "The Catcher in the Rye", genre: "Fiction", author: "J.D. Salinger", year: "1951", cover: "images/catcher.jpg" },
+        { name: "Harry Potter and the Philosopher's Stone", genre: "Fantasy", author: "J.K. Rowling", year: "1997", cover: "images/potter.jpg" },
+        { name: "A Winter’s Promise (The Mirror Visitor Quartet)", genre: "Fantasy", author: "Christelle Dabos", year: "2013", cover: "images/winter.jpg" },
+        { name: "The Great Gatsby", genre: "Fiction", author: "F. Scott Fitzgerald", year: "1925", cover: "images/gatsby.jpg" },
+        { name: "The Hobbit", genre: "Fantasy", author: "J.R.R. Tolkien", year: "1937", cover: "images/hobbit.jpg" },
+        { name: "Assassin’s Apprentice (The Farseer Trilogy)", genre: "Fantasy", author: "Robin Hobb", year: "1995", cover: "images/assassin.jpg" }
+      ];
+
+
+      const renderBooks = (books) => {
+        bookGrid.innerHTML = '';
+        if (books.length === 0) {
+          bookGrid.innerHTML = '<p class="no-results">No books found.</p>';
+          return;
+        }
+        books.forEach(book => {
+          const bookCard = document.createElement('div');
+          bookCard.classList.add('book-card');
+          bookCard.innerHTML = `
+            <img src="${book.cover}" alt="${book.name}">
+            <div class="book-info">
+              <h3>${book.name}</h3>
+              <p>Author: ${book.author}</p>
+              <p>Genre: ${book.genre}</p>
+              <p>Year: ${book.year}</p>
+            </div>
+          `;
+          bookGrid.appendChild(bookCard);
+        });
+      };
+
+      renderBooks(booksData);
+
+      searchButton.addEventListener('click', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const filteredBooks = booksData.filter(book => book.name.toLowerCase().includes(query));
+        renderBooks(filteredBooks);
+      });
+
+      filterButton.addEventListener('click', () => {
+        const genre = genreSelect.value;
+        const filteredBooks = booksData.filter(book => book.genre.includes(genre));
+        renderBooks(filteredBooks);
+      });
+    });
+  </script>
+</body>
+</html>

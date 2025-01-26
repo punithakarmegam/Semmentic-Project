@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfinityPlay - Music Collection</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    .carousel-container {
+      overflow-x: scroll; /* Pour permettre le défilement horizontal */
+      scrollbar-width: none; /* Cacher la scrollbar sur Firefox */
+    }
+
+    .carousel-container::-webkit-scrollbar {
+      display: none; /* Cacher la scrollbar sur Chrome, Edge et Safari */
+    }
+  </style>
+</head>
+
+<body data-page="music">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">InfinityPlay</a></div>
+    <ul class="nav-links">
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="book.html">Books</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="music.html" class="active">Music</a></li>
+      <li><a href="crossmedia.html">Cross-Media</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" style="background-image: url('images/music.jpeg');">
+    <div class="hero-content">
+      <h1>Music Collection</h1>
+      <p>Discover your favorite tracks and explore new music, tailored just for you.</p>
+    </div>
+  </header>
+    <!-- Recommendations Section -->
+    <section id="recommendationsSection" class="recommendations-section">
+      <h2>Recommended Pop Albums</h2>
+      <div class="game-grid">
+        <div class="game-card">
+          <span class="badge">Pop</span>
+          <img src="images/1989.jpg" alt="1989">
+          <div class="game-info">
+            <h3>1989</h3>
+            <p>Artist: Taylor Swift</p>
+            <p>Genre: Pop</p>
+          </div>
+        </div>
+        <div class="game-card">
+          <span class="badge">Pop</span>
+          <img src="images/Future-Nostalgia.jpg" alt="Future Nostalgia">
+          <div class="game-info">
+            <h3>Future Nostalgia</h3>
+            <p>Artist: Dua Lipa</p>
+            <p>Genre: Pop</p>
+          </div>
+        </div>
+        <div class="game-card">
+          <span class="badge">Pop</span>
+          <img src="images/25.jpg" alt="25">
+          <div class="game-info">
+            <h3>25</h3>
+            <p>Artist: Adele</p>
+            <p>Genre: Pop</p>
+          </div>
+        </div>
+        <div class="game-card">
+          <span class="badge">Pop</span>
+          <img src="images/positions.jpg" alt="Positions">
+          <div class="game-info">
+            <h3>Positions</h3>
+            <p>Artist: Ariana Grande</p>
+            <p>Genre: Pop</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+<!-- Featured Albums Section -->
+<section id="featuredSection" class="featured">
+  <h2>Featured Music</h2>
+  <div class="carousel">
+    <div class="carousel-container">
+      <div class="album" style="width: 20%;">
+        <img src="images/nothing.jpg" alt="Nothing Album Cover">
+        <h3>Nothing</h3>
+        <p>Darkside</p>
+        <p>Genre: Electronic</p>
+      </div>
+      <div class="album" style="width: 20%;">
+        <img src="images/hurry_up_tomorrow.jpg" alt="Hurry Up Tomorrow Album Cover">
+        <h3>Hurry Up Tomorrow</h3>
+        <p>The Weeknd</p>
+        <p>Genre: Pop</p>
+      </div>
+      <div class="album" style="width: 20%;">
+        <img src="images/lg7.jpg" alt="LG7 Album Cover">
+        <h3>LG7</h3>
+        <p>Lady Gaga</p>
+        <p>Genre: Pop</p>
+      </div>
+      <div class="album" style="width: 20%;">
+        <img src="images/song_of_the_earth.jpg" alt="Song of the Earth Album Cover">
+        <h3>Song of the Earth</h3>
+        <p>Dirty Projectors et Stargaze</p>
+        <p>Genre: Indie Rock</p>
+      </div>
+      <div class="album" style="width: 20%;">
+        <img src="images/the_right_person_will_stay.jpg" alt="The Right Person Will Stay Album Cover">
+        <h3>The Right Person Will Stay</h3>
+        <p>Lana Del Rey</p>
+        <p>Genre: Country</p>
+      </div>
+      <div class="album" style="width: 20%;">
+        <img src="images/gut.jpg" alt="Gut Album Cover">
+        <h3>Gut</h3>
+        <p>Baths</p>
+        <p>Genre: Electronic</p>
+      </div>
+      <div class="album" style="width: 20%;">
+        <img src="images/eusexua.jpg" alt="Eusexua Album Cover">
+        <h3>Eusexua</h3>
+        <p>FKA twigs</p>
+        <p>Genre: Electronic</p>
+      </div>
+      <div class="album" style="width: 20%;">
+        <img src="images/perverts.jpg" alt="Perverts Album Cover">
+        <h3>Perverts</h3>
+        <p>Ethel Cain</p>
+        <p>Genre: Slowcore</p>
+      </div>
+      <div class="album" style="width: 20%;">
+        <img src="images/blood_on_the_silver_screen.jpg" alt="Blood on the Silver Screen Album Cover">
+        <h3>Blood on the Silver Screen</h3>
+        <p>Sasami</p>
+        <p>Genre: Pop</p>
+      </div>
+      <div class="album" style="width: 20%;">
+        <img src="images/phonetics_on_and_on.jpg" alt="Phonetics On and On Album Cover">
+        <h3>Phonetics On and On</h3>
+        <p>Horsegirl</p>
+        <p>Genre: Indie Rock</p>
+      </div>
+    </div>
+    <button class="carousel-button left">❮</button>
+    <button class="carousel-button right">❯</button>
+  </div>
+</section>
+
+
+  <!-- Your Playlists Section -->
+  <section id="playlistSection" class="playlists">
+    <h2>Your Playlists</h2>
+    <div class="playlist-grid">
+      <div class="playlist">
+        <img src="images/playlist1.jpg" alt="Chill Vibes">
+        <h3>Chill Vibes</h3>
+      </div>
+      <div class="playlist">
+        <img src="images/playlist2.jpg" alt="Workout Beats">
+        <h3>Workout Beats</h3>
+      </div>
+      <div class="playlist">
+        <img src="images/playlist3.jpg" alt="Top Hits">
+        <h3>Top Hits</h3>
+      </div>
+      <div class="playlist">
+        <img src="images/playlist4.jpg" alt="Relaxing Piano">
+        <h3>Relaxing Piano</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 InfinityPlay. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const carouselContainer = document.querySelector('.carousel-container');
+    const leftButton = document.querySelector('.carousel-button.left');
+    const rightButton = document.querySelector('.carousel-button.right');
+
+    const albumWidth = carouselContainer.querySelector('.album').offsetWidth;
+
+    rightButton.addEventListener('click', () => {
+      carouselContainer.scrollBy({ left: albumWidth, behavior: 'smooth' });
+    });
+
+    leftButton.addEventListener('click', () => {
+      carouselContainer.scrollBy({ left: -albumWidth, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

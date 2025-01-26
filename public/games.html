@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfinityPlay - Games Collection</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+</head>
+<body data-page="games">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">InfinityPlay</a></div>
+    <ul class="nav-links">
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="book.html">Books</a></li>
+      <li><a href="games.html" class="active">Games</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="crossmedia.html">Cross-Media</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Games Collection</h1>
+      <p>Discover Your Next Gaming Adventure</p>
+    </div>
+  </header>
+
+  <!-- Recommendations Section -->
+  <section id="recommendationsSection" class="recommendations-section">
+    <h2>Recommended Xbox Games</h2>
+    <div class="game-grid">
+      <div class="game-card">
+        <span class="badge">Xbox game</span>
+        <img src="images/halo_infinite.jpg" alt="Halo Infinite">
+        <div class="game-info">
+          <h3>Halo Infinite</h3>
+          <p>Genre: First-Person Shooter</p>
+        </div>
+      </div>
+      <div class="game-card">
+        <span class="badge">Xbox game</span>
+        <img src="images/forza_horizon_5.jpg" alt="Forza Horizon 5">
+        <div class="game-info">
+          <h3>Forza Horizon 5</h3>
+          <p>Genre: Racing</p>
+        </div>
+      </div>
+      <div class="game-card">
+        <span class="badge">Xbox game</span>
+        <img src="images/gears_5.jpg" alt="Gears 5">
+        <div class="game-info">
+          <h3>Gears 5</h3>
+          <p>Genre: Third-Person Shooter</p>
+        </div>
+      </div>
+      <div class="game-card">
+        <span class="badge">Xbox game</span>
+        <img src="images/minecraft.jpg" alt="Minecraft">
+        <div class="game-info">
+          <h3>Minecraft</h3>
+          <p>Genre: Sandbox/Adventure</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Search and Filter Section -->
+  <section id="searchSection" class="search-section">
+    <h2>Search and Filter Games</h2>
+    <div class="search-container">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for a game...">
+        <button id="searchButton">Search</button>
+      </div>
+      <div class="filter-bar">
+        <select id="platformSelect">
+          <option value="" selected>All Platforms</option>
+          <option value="PlayStation">PlayStation</option>
+          <option value="Xbox">Xbox</option>
+          <option value="PC">PC</option>
+          <option value="Nintendo">Nintendo</option>
+        </select>
+        <button id="filterButton">Filter</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Section -->
+  <section id="gamesSection" class="games-section">
+    <h2>Available Games</h2>
+    <div id="gameGrid" class="game-grid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 InfinityPlay. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const gameGrid = document.getElementById('gameGrid');
+      const searchInput = document.getElementById('searchInput');
+      const searchButton = document.getElementById('searchButton');
+      const platformSelect = document.getElementById('platformSelect');
+      const filterButton = document.getElementById('filterButton');
+
+      const gamesData = [
+        { name: "Marvel's Spider-Man 2", platform: "PlayStation", releaseDate: "October 20, 2023", cover: "images/spider_man_2.jpg", tag: "Trending" },
+        { name: "DRAGON BALL: Sparking Zero", platform: "PlayStation, Xbox, PC", releaseDate: "December 5, 2024", cover: "images/sparking_zero.jpg", tag: "Upcoming" },
+        { name: "Halo Infinite", platform: "Xbox", releaseDate: "December 8, 2021", cover: "images/halo_infinite.jpg", tag: "Xbox game" },
+        { name: "GTA V", platform: "PlayStation, Xbox, PC", releaseDate: "September 17, 2013", cover: "images/gta_V.jpg", tag: "Classic" },
+        { name: "Forza Horizon 5", platform: "Xbox", releaseDate: "November 9, 2021", cover: "images/forza_horizon_5.jpg", tag: "Xbox game" },
+        { name: "Gears 5", platform: "Xbox", releaseDate: "September 10, 2019", cover: "images/gears_5.jpg", tag: "Xbox game" },
+        { name: "God Of War", platform: "PlayStation, PC", releaseDate: "April 20, 2018", cover: "images/god_of_war.jpg", tag: "Top Rated" },
+        { name: "Minecraft", platform: "Xbox, PC", releaseDate: "November 18, 2011", cover: "images/minecraft.jpg", tag: "Xbox game" }
+      ];
+
+
+      const renderGames = (games) => {
+        gameGrid.innerHTML = '';
+        if (games.length === 0) {
+          gameGrid.innerHTML = '<p class="no-results">No games found.</p>';
+          return;
+        }
+        games.forEach(game => {
+          const gameCard = document.createElement('div');
+          gameCard.classList.add('game-card');
+          gameCard.innerHTML = `
+            <img src="${game.cover}" alt="${game.name}">
+            <div class="game-info">
+              <h3>${game.name}</h3>
+              <p>Platform: ${game.platform}</p>
+              <p>Release Date: ${game.releaseDate}</p>
+            </div>
+          `;
+          gameGrid.appendChild(gameCard);
+        });
+      };
+
+      renderGames(gamesData);
+
+      searchButton.addEventListener('click', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const filteredGames = gamesData.filter(game => game.name.toLowerCase().includes(query));
+        renderGames(filteredGames);
+      });
+
+      filterButton.addEventListener('click', () => {
+        const platform = platformSelect.value;
+        const filteredGames = gamesData.filter(game => game.platform.includes(platform));
+        renderGames(filteredGames);
+      });
+    });
+  </script>
+</body>
+</html>

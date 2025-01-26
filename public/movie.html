@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfinityPlay - Movies Collection</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="movies">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">InfinityPlay</a></div>
+    <ul class="nav-links">
+      <li><a href="movie.html" class="active">Movies</a></li>
+      <li><a href="book.html">Books</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="crossmedia.html">Cross-Media</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Movies Collection</h1>
+      <p>Find Your Favorite Movies or Explore New Ones</p>
+    </div>
+  </header>
+
+  <!-- Search and Filter Section -->
+  <section id="searchSection" class="search-section">
+    <h2>Search and Filter Movies</h2>
+    <div class="search-container">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for a movie...">
+        <button id="searchButton">Search</button>
+      </div>
+      <div class="filter-bar">
+        <select id="genreSelect">
+          <option value="">All Genres</option>
+          <option value="Drama">Drama</option>
+          <option value="Action">Action</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Horror">Horror</option>
+        </select>
+        <button id="filterButton">Filter</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Movies Section -->
+  <section id="moviesSection" class="movies-section">
+    <h2>Available Movies</h2>
+    <div id="movieGrid" class="movie-grid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 InfinityPlay. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const movieGrid = document.getElementById('movieGrid');
+      const searchInput = document.getElementById('searchInput');
+      const searchButton = document.getElementById('searchButton');
+      const genreSelect = document.getElementById('genreSelect');
+      const filterButton = document.getElementById('filterButton');
+
+      const moviesData = [
+        {
+          name: "The Shawshank Redemption",
+          genre: "Drama",
+          year: "1994",
+          rating: "9.3",
+          poster: "images/evades.jpeg",
+          link: "shawshank.html"
+        },
+        {
+          name: "The Godfather",
+          genre: "Crime, Drama",
+          year: "1972",
+          rating: "9.2",
+          poster: "images/godfather.jpeg",
+          link: "godfather.html"
+        },
+        {
+          name: "Inception",
+          genre: "Action, Sci-Fi",
+          year: "2010",
+          rating: "8.8",
+          poster: "images/inception.jpeg",
+          link: "inception.html"
+        },
+        {
+          name: "Interstellar",
+          genre: "Adventure, Drama, Sci-Fi",
+          year: "2014",
+          rating: "8.6",
+          poster: "images/interstellar.jpeg",
+          link: "interstellar.html"
+        },
+        {
+          name: "Parasite",
+          genre: "Thriller, Drama",
+          year: "2019",
+          rating: "8.6",
+          poster: "images/parasite.jpeg",
+          link: "parasite.html"
+        },
+      ];
+
+      const renderMovies = (movies) => {
+        movieGrid.innerHTML = '';
+        if (movies.length === 0) {
+          movieGrid.innerHTML = '<p class="no-results">No movies found.</p>';
+          return;
+        }
+        movies.forEach(movie => {
+          const movieCard = document.createElement('a');
+          movieCard.href = movie.link; // Link to the movie's page
+          movieCard.classList.add('movie-card');
+          movieCard.innerHTML = `
+            <img src="${movie.poster}" alt="${movie.name}">
+            <div class="movie-info">
+              <h3>${movie.name}</h3>
+              <p>Genre: ${movie.genre}</p>
+              <p>Year: ${movie.year}</p>
+              <p>Rating: ${movie.rating}</p>
+            </div>
+          `;
+          movieGrid.appendChild(movieCard);
+        });
+      };
+
+      renderMovies(moviesData);
+
+      searchButton.addEventListener('click', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const filteredMovies = moviesData.filter(movie => movie.name.toLowerCase().includes(query));
+        renderMovies(filteredMovies);
+      });
+
+      filterButton.addEventListener('click', () => {
+        const genre = genreSelect.value;
+        const filteredMovies = moviesData.filter(movie => movie.genre.includes(genre));
+        renderMovies(filteredMovies);
+      });
+    });
+  </script>
+</body>
+</html>

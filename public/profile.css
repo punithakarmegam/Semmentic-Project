@@ -1,0 +1,192 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1b1b1f;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar .logo {
+    font-size: 1.8rem;
+    color: #a050ff;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav-links a.active {
+    color: #a050ff;
+    font-weight: bold;
+  }
+  
+  /* Hero Section */
+  .profile-hero {
+    background-image: url('images/profile-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .profile-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .profile-hero .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .profile-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-hero p {
+    font-size: 1.2rem;
+  }
+  
+  /* Profile Info Section */
+  .profile-info {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #a050ff;
+  }
+  
+  .user-details h2 {
+    margin-bottom: 0.5rem;
+    color: #a050ff;
+  }
+  
+  .user-details p {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Badges Section */
+  .badges {
+    padding: 2rem;
+    background: #1b1b1f;
+    text-align: center;
+  }
+  
+  .badges h2 {
+    margin-bottom: 2rem;
+    color: #a050ff;
+  }
+  
+  .badge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+  
+  .badge {
+    background: #1f1f1f;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  }
+  
+  .badge img {
+    width: 80px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    border: 2px solid #a050ff;
+  }
+  
+  .badge p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  /* Challenges Section */
+  .challenges {
+    padding: 2rem;
+    background: #121212;
+    text-align: center;
+  }
+  
+  .challenges h2 {
+    margin-bottom: 2rem;
+    color: #a050ff;
+  }
+  
+  .challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .challenge {
+    background: #1b1b1f;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .challenge h3 {
+    margin-bottom: 1rem;
+    color: #a050ff;
+  }
+  
+  .challenge button {
+    background-color: #a050ff;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .challenge button:hover {
+    background-color: #9226e6;
+  }
+  
+  /* Footer */
+  footer {
+    background: #1b1b1f;
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+  }
+  

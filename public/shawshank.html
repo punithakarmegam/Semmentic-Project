@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Shawshank Redemption - InfinityPlay</title>
+  <link rel="stylesheet" href="evades.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">InfinityPlay</a></div>
+    <ul class="nav-links">
+      <li><a href="movie.html" class="active">Movies</a></li>
+      <li><a href="book.html">Books</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="crossmedia.html">Cross-Media</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="movie-hero" style="background-image: url('images/evades.jpeg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>The Shawshank Redemption</h1>
+      <p>A timeless story of hope and resilience.</p>
+    </div>
+  </header>
+
+  <!-- Movie Details Section -->
+  <section class="movie-details">
+    <div class="container">
+      <div class="poster">
+        <img src="images/evades.jpeg" alt="The Shawshank Redemption Poster">
+      </div>
+      <div class="details">
+        <h2>Details</h2>
+        <p><strong>Director:</strong> Frank Darabont</p>
+        <p><strong>Cast:</strong> Tim Robbins, Morgan Freeman, Bob Gunton</p>
+        <p><strong>Genre:</strong> Drama</p>
+        <p><strong>Year:</strong> 1994</p>
+        <p><strong>Rating:</strong> 9.3</p>
+        <p><strong>Available on:</strong> Netflix, Amazon Prime</p>
+        <div class="buttons">
+          <button class="favorite-btn">Add to Favorites</button>
+          <button class="watchlist-btn">Add to Watched List</button>
+          <div class="rate-section">
+            <button class="rate-btn">Rate Movie</button>
+            <div class="rating-stars">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Synopsis Section -->
+  <section class="movie-synopsis">
+    <h2>Synopsis</h2>
+    <p>
+      The Shawshank Redemption tells the story of Andy Dufresne, a banker who is sentenced to life in Shawshank State Penitentiary for the murders of his wife and her lover, despite his claims of innocence. Over the following two decades, he befriends a fellow prisoner, Ellis "Red" Redding, and becomes instrumental in a money-laundering operation led by the prison warden.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 InfinityPlay. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const stars = document.querySelectorAll('.rating-stars .star');
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const rating = star.getAttribute('data-value');
+        alert(`You rated this movie ${rating} stars!`);
+      });
+    });
+  </script>
+
+</body>
+</html>

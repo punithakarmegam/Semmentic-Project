@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfinityPlay - Discover Entertainment</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">InfinityPlay</div>
+    <ul class="nav-links">
+      <li><a href="movie.html" class="active">Movies</a></li>
+      <li><a href="book.html">Books</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="music.html">Music</a></li>
+    </ul>
+    <div class="nav-buttons">
+      <button class="login-btn"><a href="connexion.html" class="login-btn">Log In</a></button>
+      <button class="signup-btn"><a href="inscription.html">Sign Up</a></button>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Welcome to InfinityPlay</h1>
+      <p>Your personalized portal for Movies, Books, Games, and Music</p>
+      <div class="search-bar">
+        <select>
+          <option value="movie">Movies</option>
+          <option value="book">Books</option>
+          <option value="game">Games</option>
+          <option value="music">Music</option>
+        </select>
+        <input type="text" placeholder="Search for your next favorite...">
+        <button>Search</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Categories Section -->
+  <section id="categories" class="categories">
+    <h2>Explore Categories</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/movies.jpg" alt="Movies">
+        <div class="card-overlay">
+          <h3>Movies</h3>
+          <p>Discover top movies tailored to your preferences and moods.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/books.jpeg" alt="Books">
+        <div class="card-overlay">
+          <h3>Books</h3>
+          <p>Dive into a world of books, from timeless classics to modern tales.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/games.jpeg" alt="Games">
+        <div class="card-overlay">
+          <h3>Games</h3>
+          <p>Uncover thrilling games and immersive indie experiences.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/music.png" alt="Music">
+        <div class="card-overlay">
+          <h3>Music</h3>
+          <p>Feel the beat with curated playlists and trending tracks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section id="cta" class="call-to-action">
+    <h2>Join the InfinityPlay Community</h2>
+    <p>Sign up now to start your personalized entertainment journey.</p>
+    <button class="cta-btn">Get Started</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 InfinityPlay. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
