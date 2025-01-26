@@ -1,0 +1,4 @@
+kagglehub
+rdflib
+pandas
+flask
