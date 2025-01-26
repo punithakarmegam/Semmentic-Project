@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music - E-Entertainment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="Music">
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">E-Entertainment</a></div>
+    <ul class="nav-links">
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="book.html">Books</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="music.html"class="active">Music</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Music Collection</h1>
+      <p>Explore top Music curated for you.</p>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for a Music...">
+        <button id="searchButton">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section Résultats de Recherche -->
+  <section id="searchResults" class="results">
+    <h2>Search Results</h2>
+    <ul id="resultsList"></ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 E-Entertainment Platform. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
